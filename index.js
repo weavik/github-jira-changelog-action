@@ -41,7 +41,7 @@ Summary
 ---------------------
 <% tickets.all.forEach((ticket) => { %>
   * <%= ticket.key %>
-<% }) %>
+<% }) -%>
 
 Jira Tickets
 ---------------------
