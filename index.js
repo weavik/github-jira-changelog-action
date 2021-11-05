@@ -37,6 +37,12 @@ Release version: <%= jira.releaseVersions[0].name -%>
 <% }); -%>
 <% } %>
 
+Summary
+---------------------
+<% tickets.all.forEach((ticket) => { %>
+  * <%= ticket.key %>
+<% }) %>
+
 Jira Tickets
 ---------------------
 <% tickets.all.forEach((ticket) => { %>
