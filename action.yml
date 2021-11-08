@@ -41,6 +41,10 @@ inputs:
         description: 'Boolean flag indicating whether to include or exclude `Pending Approval` section'
         default: 'true'
         required: false
+    message: 
+        description: 'Custom message for template header'
+        default: ''
+        required: false
 outputs:
     changelog_message:
         description: 'Generated changelog entry'
