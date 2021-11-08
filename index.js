@@ -4,7 +4,7 @@ const Entities = require('html-entities');
 const ejs = require('ejs');
 const Haikunator = require('haikunator');
 const { SourceControl, Jira } = require('jira-changelog');
-// const RegExpFromString = require('regexp-from-string');
+const RegExpFromString = require('regexp-from-string');
 
 const config = {
   jira: {
