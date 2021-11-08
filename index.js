@@ -40,10 +40,10 @@ Release version: <%= jira.releaseVersions[0].name -%>
 
 Summary
 ---------------------
-<% if (!tickets.all.length) {%> ~ None ~ <% } %>
 <% tickets.all.forEach((ticket) => { %>
   * <%= ticket.key -%>
-<% }) -%>
+<% }); -%>
+<% if (!tickets.all.length) {%> ~ None ~ <% } %>
 
 Jira Tickets
 ---------------------
