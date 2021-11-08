@@ -14,7 +14,7 @@ const config = {
       token: core.getInput('jira_token'),
     },
     baseUrl: core.getInput('jira_base_url'),
-    ticketIDPattern: RegExpFromString('[.*]'),
+    ticketIDPattern: /\[([A-Z]+\-[0-9]+)\]/i,
     // ticketIDPattern: RegExpFromString(core.getInput('jira_ticket_id_pattern')),
     approvalStatus: core.getInput('approval_statuses').split(",").filter(x => x !== ""),
     excludeIssueTypes: core.getInput('exclude_issue_types').split(",").filter(x => x !== ""),
