@@ -4,7 +4,7 @@ const Entities = require('html-entities');
 const ejs = require('ejs');
 const Haikunator = require('haikunator');
 const { SourceControl, Jira } = require('jira-changelog');
-const RegExpFromString = require('regexp-from-string');
+// const RegExpFromString = require('regexp-from-string');
 
 const config = {
   jira: {
@@ -14,7 +14,7 @@ const config = {
       token: core.getInput('jira_token'),
     },
     baseUrl: core.getInput('jira_base_url'),
-    ticketIDPattern: RegExpFromString('.*'),
+    // ticketIDPattern: RegExpFromString('.*'),
     approvalStatus: core.getInput('approval_statuses').split(",").filter(x => x !== ""),
     excludeIssueTypes: core.getInput('exclude_issue_types').split(",").filter(x => x !== ""),
     includeIssueTypes: [],
@@ -39,6 +39,7 @@ Release version: <%= jira.releaseVersions[0].name -%>
 
 Summary
 ---------------------
+<% if (!tickets.all.length) {%> ~ None ~ <% } %>
 <% tickets.all.forEach((ticket) => { %>
   * <%= ticket.key -%>
 <% }) -%>
