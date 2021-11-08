@@ -31,6 +31,7 @@ const config = {
 
 
 const template = `
+<%= message %>
 <% if (jira.releaseVersions && jira.releaseVersions.length) {  %>
 Release version: <%= jira.releaseVersions[0].name -%>
 <% jira.releaseVersions.sort((a, b) => a.projectKey.localeCompare(b.projectKey)).forEach((release) => { %>
@@ -162,6 +163,7 @@ async function main() {
       releaseVersions: jira.releaseVersions,
     };
     data.includePendingApprovalSection = core.getInput('include_pending_approval_section') === 'true';
+    data.message = core.getInput('message');
 
     const entitles = new Entities.AllHtmlEntities();
     const changelogMessage = ejs.render(template, data);
