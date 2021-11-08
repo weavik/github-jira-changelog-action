@@ -166,7 +166,7 @@ async function main() {
     data.message = core.getInput('message');
 
     const entitles = new Entities.AllHtmlEntities();
-    const changelogMessage = ejs.render(template, data);
+    const changelogMessage = ejs.render(template, data).toString();
 
     console.log('Changelog message entry:');
     console.log(entitles.decode(changelogMessage));
